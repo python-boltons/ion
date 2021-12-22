@@ -2,10 +2,10 @@
 
 import logging as _logging
 
-from ._core import dummy
+from ._core import confirm, copy_to_clipboard, efill, ewrap, getch
 
 
-__all__ = ["dummy"]
+__all__ = ["confirm", "copy_to_clipboard", "efill", "ewrap", "getch"]
 
 __author__ = "Bryan M Bugyi"
 __email__ = "bryanbugyi34@gmail.com"

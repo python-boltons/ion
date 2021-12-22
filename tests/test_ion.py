@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
-from ion import dummy
+from _pytest.monkeypatch import MonkeyPatch
+
+import ion
 
 
-def test_dummy() -> None:
-    """Test the dummy() function."""
-    assert dummy(1, 2) == 3
+def test_confirm(monkeypatch: MonkeyPatch) -> None:
+    """Test the ion.confirm() function."""
+    monkeypatch.setattr("builtins.input", lambda _: "y")
+    assert ion.confirm("test prompt")
